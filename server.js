@@ -1,11 +1,12 @@
 var http = require("http");
 var url = require('url');
+var fs = require("fs");
 
 var blinkstick = require('blinkstick');
 var device = blinkstick.findFirst();
 device.inverse = true;
 
-device.setColor('green');
+device.setColor('red');
 
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
@@ -17,6 +18,12 @@ http.createServer(function (req, res) {
     //device.setColor(color);
 
     res.end(mode + " " + color);
-}).listen(8081);
-// Console will print the message
-console.log('Server running at http://127.0.0.1:8081/');
+}).listen(8187, '192.168.178.28');
+
+
+fs.readFile('index.html', function(err, data){
+    if(err){
+        return console.error(err);
+    }
+    console.log("Async read: " + data.toString());
+});
