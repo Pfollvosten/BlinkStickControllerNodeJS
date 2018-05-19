@@ -12,7 +12,7 @@ server = http.createServer(function (req, res) {
 
     pathname = url.parse(req.url , true).pathname.substring(1);
     if(pathname.substr(pathname.length-4) == 'html'){
-        fs.readFile(pathname ,function (err, data){
+        fs.readFile("./complex/" + pathname ,function (err, data){
             res.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
             res.write(data);
             res.end();
@@ -37,5 +37,4 @@ function applyColor(mode , color){
         device.blink(color , 1,1 );
         break;
     }
-    //console.log("color set to: " + color + " in " + mode + " mode"); //why no working? .toString() ????
 }
