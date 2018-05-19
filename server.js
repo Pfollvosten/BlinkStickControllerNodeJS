@@ -7,14 +7,10 @@ var fs = require('fs');
 var device = blinkstick.findFirst();
 device.inverse = true;
 
-//server setup
-/*server = http.createServer(function (req, res) {
-    
+/*
     q = url.parse(req.url, true).query;
-    applyColor(q.mode , q.color);
-
-}).listen(8187 , '192.168.178.28');*/
-
+    applyColor(q.mode , q.color); ,
+*/
 
 var server = http.createServer(function (req ,res){
     console.log('got request...processing');
