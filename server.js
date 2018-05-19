@@ -21,7 +21,7 @@ server = http.createServer(function (req, res) {
     q = url.parse(req.url, true).query;
     applyColor(q.mode , q.color);
 
-}).listen(8187);//, '192.168.178.28');
+}).listen(8187 , '192.168.178.28');
 console.log('Server up and running');
 
 //blinkstick control
