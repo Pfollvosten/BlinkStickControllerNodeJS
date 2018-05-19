@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Color</title>
+    </head>
+    <body>
+        <select id="colortable">
+            <option value="red">Rot</option>
+            <option value="green">Grün</option>
+            <option value="blue">Blau</option>
+            <option value="white">Weiss</option>
+            <option value="black">Schwarz</option>
+        </select>
+        <button id="apply">Apply Color Selection</button>
+        <script>
+            table = document.getElementById("colortable");
+            document.getElementById("apply").onclick = function(){
+                window.history.replaceState(null , null ,
+                    "?mode=color&color=" + table.value);
+            }
+        </script>
+    </body>
+</html>
