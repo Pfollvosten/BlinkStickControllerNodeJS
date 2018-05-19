@@ -7,10 +7,22 @@
         <button id="green">Green</button>
         <button id="red">Red</button>
         <button id="blue">Blue</button>
+
+        <button id="apply">Apply Color Selections</button>
     </body>
     <script>
         document.getElementById("green").onclick = function(){
-            alert("Gruen gedrueckt");
+            window.history.replaceState(null , null, "?mode=color&color=green");
+        }
+        document.getElementById("blue").onclick = function(){
+            window.history.replaceState(null , null, "?mode=color&color=blue");
+        }
+        document.getElementById("red").onclick = function(){
+            window.history.replaceState(null , null, "?mode=color&color=red");
+        }
+
+        document.getElementById("apply").onclick = function(){
+            location.reload();
         }
     </script>
 </html>
